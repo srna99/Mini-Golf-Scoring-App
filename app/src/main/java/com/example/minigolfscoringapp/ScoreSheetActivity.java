@@ -1,15 +1,23 @@
 package com.example.minigolfscoringapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
-
-public class ScoreSheetActivity extends AppCompatActivity {
+import android.view.View;
+import android.widget.Button;
+import android.view.View.OnClickListener;
+import android.view.inputmethod.EditorInfo;
+import android.os.Bundle;
+import android.view.KeyEvent;
+public  class ScoreSheetActivity extends AppCompatActivity {
     EditText p1Hole1, p1Hole2, p1Hole3, p1Hole4, p1Hole5;
     EditText p2Hole1, p2Hole2, p2Hole3, p2Hole4, p2Hole5;
     TextView p1Total, p2Total;
+
+    String boxEntry;
+    int numStrokes;
+    int p1FinalTotal = 0;
+    int p2FinalTotal = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,5 +35,149 @@ public class ScoreSheetActivity extends AppCompatActivity {
         p2Hole4 = (EditText) findViewById(R.id.p2h4);
         p2Hole5 = (EditText) findViewById(R.id.p2h5);
 
+        p1Total = (TextView) findViewById(R.id.player1Total);
+        p2Total = (TextView) findViewById(R.id.player2Total);
+
+        p1Hole1.setOnEditorActionListener(new EditText.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    boxEntry = p1Hole1.getText().toString();
+                    numStrokes = Integer.parseInt(boxEntry);
+                    p1FinalTotal += numStrokes;
+                    p1Total.setText(String.valueOf(p1FinalTotal));
+
+                }
+                return false;
+            }
+        });
+        p1Hole2.setOnEditorActionListener(new EditText.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    boxEntry = p1Hole2.getText().toString();
+                    numStrokes = Integer.parseInt(boxEntry);
+                    p1FinalTotal += numStrokes;
+                    p1Total.setText(String.valueOf(p1FinalTotal));
+
+                }
+                return false;
+            }
+        });
+        p1Hole3.setOnEditorActionListener(new EditText.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    boxEntry = p1Hole3.getText().toString();
+                    numStrokes = Integer.parseInt(boxEntry);
+                    p1FinalTotal += numStrokes;
+                    p1Total.setText(String.valueOf(p1FinalTotal));
+
+                }
+                return false;
+            }
+        });
+        p1Hole4.setOnEditorActionListener(new EditText.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    boxEntry = p1Hole4.getText().toString();
+                    numStrokes = Integer.parseInt(boxEntry);
+                    p1FinalTotal += numStrokes;
+                    p1Total.setText(String.valueOf(p1FinalTotal));
+
+                }
+                return false;
+            }
+        });
+        p1Hole5.setOnEditorActionListener(new EditText.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    boxEntry = p1Hole5.getText().toString();
+                    numStrokes = Integer.parseInt(boxEntry);
+                    p1FinalTotal += numStrokes;
+                    p1Total.setText(String.valueOf(p1FinalTotal));
+
+                }
+                return false;
+            }
+        });
+        p2Hole1.setOnEditorActionListener(new EditText.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    boxEntry = p2Hole1.getText().toString();
+                    numStrokes = Integer.parseInt(boxEntry);
+                    p2FinalTotal += numStrokes;
+                    p2Total.setText(String.valueOf(p2FinalTotal));
+
+                }
+                return false;
+            }
+        });
+
+        p2Hole2.setOnEditorActionListener(new EditText.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    boxEntry = p2Hole2.getText().toString();
+                    numStrokes = Integer.parseInt(boxEntry);
+                    p2FinalTotal += numStrokes;
+                    p2Total.setText(String.valueOf(p2FinalTotal));
+
+                }
+                return false;
+            }
+        });
+        p2Hole3.setOnEditorActionListener(new EditText.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    boxEntry = p2Hole3.getText().toString();
+                    numStrokes = Integer.parseInt(boxEntry);
+                    p2FinalTotal += numStrokes;
+                    p2Total.setText(String.valueOf(p2FinalTotal));
+
+                }
+                return false;
+            }
+        });
+        p2Hole4.setOnEditorActionListener(new EditText.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    boxEntry = p2Hole4.getText().toString();
+                    numStrokes = Integer.parseInt(boxEntry);
+                    p2FinalTotal += numStrokes;
+                    p2Total.setText(String.valueOf(p2FinalTotal));
+
+                }
+                return false;
+            }
+        });
+        p2Hole5.setOnEditorActionListener(new EditText.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    boxEntry = p2Hole5.getText().toString();
+                    numStrokes = Integer.parseInt(boxEntry);
+                    p2FinalTotal += numStrokes;
+                    p2Total.setText(String.valueOf(p2FinalTotal));
+
+                }
+                return false;
+            }
+        });
     }
 }
