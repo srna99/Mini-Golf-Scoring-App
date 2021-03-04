@@ -9,7 +9,6 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="20dp"
-    android:tag="player2Holes"
     tools:context=".ScoreSheetActivity">
 
     <TextView
@@ -20,9 +19,10 @@
         android:layout_weight="0.5"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:text="Mini Golf Score Tracker"
+        android:text="Score Sheet"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="30sp" />
+        android:textColor="#424242"
+        android:textSize="36sp" />
 
     <TableLayout
         android:id="@+id/scoresTable"
@@ -372,22 +372,13 @@
 
     <Button
         android:id="@+id/finishButton"
-        style="@android:style/Widget.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.5"
         android:text="Finish"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="24sp"
         app:backgroundTint="#6DB1E8" />
-
-    <!--    <TextView-->
-    <!--        android:id="@+id/textView12"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_weight="0.5"-->
-    <!--        android:gravity="center|center_horizontal"-->
-    <!--        android:text="Current Player: Player 1"-->
-    <!--        android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
-    <!--        android:textSize="24sp" />-->
 
 </LinearLayout>
