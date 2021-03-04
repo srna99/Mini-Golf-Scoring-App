@@ -2,13 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scoreSheetScreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#B2D38C"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".MainActivity">
+    android:tag="player2Holes"
+    tools:context=".ScoreSheetActivity">
 
     <TextView
         android:id="@+id/textView11"
@@ -93,27 +95,31 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editTextNumber2"
+                android:id="@+id/p1h1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="3"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
+                android:imeOptions="actionDone"
                 android:inputType="number"
+                android:tag="player1Holes"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="18sp"
                 android:textStyle="normal" />
 
             <EditText
-                android:id="@+id/editTextNumber3"
+                android:id="@+id/p2h1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="3"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
+                android:imeOptions="actionDone"
                 android:inputType="number"
+                android:tag="player2Holes"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="18sp"
                 android:textStyle="normal" />
@@ -138,27 +144,31 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editTextNumber5"
+                android:id="@+id/p1h2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="3"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
+                android:imeOptions="actionDone"
                 android:inputType="number"
+                android:tag="player1Holes"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="18sp"
                 android:textStyle="normal" />
 
             <EditText
-                android:id="@+id/editTextNumber4"
+                android:id="@+id/p2h2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="3"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
+                android:imeOptions="actionDone"
                 android:inputType="number"
+                android:tag="player2Holes"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="18sp"
                 android:textStyle="normal" />
@@ -183,26 +193,29 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editTextNumber6"
+                android:id="@+id/p1h3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="3"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
+                android:imeOptions="actionDone"
                 android:inputType="number"
+                android:tag="player1Holes"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="18sp"
                 android:textStyle="normal" />
 
             <EditText
-                android:id="@+id/editTextNumber7"
+                android:id="@+id/p2h3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="3"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
+                android:imeOptions="actionDone"
                 android:inputType="number"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="18sp"
@@ -228,27 +241,31 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editTextNumber8"
+                android:id="@+id/p1h4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="3"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
+                android:imeOptions="actionDone"
                 android:inputType="number"
+                android:tag="player1Holes"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="18sp"
                 android:textStyle="normal" />
 
             <EditText
-                android:id="@+id/editTextNumber9"
+                android:id="@+id/p2h4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="3"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
+                android:imeOptions="actionDone"
                 android:inputType="number"
+                android:tag="player2Holes"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="18sp"
                 android:textStyle="normal" />
@@ -275,27 +292,31 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editTextNumber11"
+                android:id="@+id/p1h5"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="3"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
+                android:imeOptions="actionDone"
                 android:inputType="number"
+                android:tag="player1Holes"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="18sp"
                 android:textStyle="normal" />
 
             <EditText
-                android:id="@+id/editTextNumber10"
+                android:id="@+id/p2h5"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="3"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
+                android:imeOptions="actionDone"
                 android:inputType="number"
+                android:tag="player2Holes"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="18sp"
                 android:textStyle="normal" />
@@ -332,7 +353,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/player1Total"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -344,7 +365,7 @@
                 android:textStyle="normal" />
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/player2Total"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -358,14 +379,24 @@
 
     </TableLayout>
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/finishButton"
+        style="@android:style/Widget.Button"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.5"
-        android:gravity="center|center_horizontal"
-        android:text="Current Player: Player 1"
+        android:text="Finish"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="24sp" />
+        app:backgroundTint="#6DB1E8" />
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView12"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_weight="0.5"-->
+    <!--        android:gravity="center|center_horizontal"-->
+    <!--        android:text="Current Player: Player 1"-->
+    <!--        android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
+    <!--        android:textSize="24sp" />-->
 
 </LinearLayout>
