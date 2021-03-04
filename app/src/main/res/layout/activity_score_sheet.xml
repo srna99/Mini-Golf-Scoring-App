@@ -104,7 +104,6 @@
                 android:gravity="center"
                 android:imeOptions="actionDone"
                 android:inputType="number"
-                android:tag="player1Holes"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="18sp"
                 android:textStyle="normal" />
@@ -119,7 +118,6 @@
                 android:gravity="center"
                 android:imeOptions="actionDone"
                 android:inputType="number"
-                android:tag="player2Holes"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="18sp"
                 android:textStyle="normal" />
@@ -153,7 +151,6 @@
                 android:gravity="center"
                 android:imeOptions="actionDone"
                 android:inputType="number"
-                android:tag="player1Holes"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="18sp"
                 android:textStyle="normal" />
@@ -168,7 +165,6 @@
                 android:gravity="center"
                 android:imeOptions="actionDone"
                 android:inputType="number"
-                android:tag="player2Holes"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="18sp"
                 android:textStyle="normal" />
@@ -202,7 +198,6 @@
                 android:gravity="center"
                 android:imeOptions="actionDone"
                 android:inputType="number"
-                android:tag="player1Holes"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="18sp"
                 android:textStyle="normal" />
@@ -250,7 +245,6 @@
                 android:gravity="center"
                 android:imeOptions="actionDone"
                 android:inputType="number"
-                android:tag="player1Holes"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="18sp"
                 android:textStyle="normal" />
@@ -265,7 +259,6 @@
                 android:gravity="center"
                 android:imeOptions="actionDone"
                 android:inputType="number"
-                android:tag="player2Holes"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="18sp"
                 android:textStyle="normal" />
@@ -301,7 +294,6 @@
                 android:gravity="center"
                 android:imeOptions="actionDone"
                 android:inputType="number"
-                android:tag="player1Holes"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="18sp"
                 android:textStyle="normal" />
@@ -316,7 +308,6 @@
                 android:gravity="center"
                 android:imeOptions="actionDone"
                 android:inputType="number"
-                android:tag="player2Holes"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="18sp"
                 android:textStyle="normal" />
