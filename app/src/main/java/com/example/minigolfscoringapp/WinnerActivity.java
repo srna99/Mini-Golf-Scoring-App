@@ -11,7 +11,7 @@ public class WinnerActivity extends AppCompatActivity {
     int firstScore;
     int secondScore;
     int thirdScore;
-    Button playagain;
+    Button btn_play_again, btn_quit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,13 +21,23 @@ public class WinnerActivity extends AppCompatActivity {
         Intent intent = getIntent();
         firstScore = intent.getIntExtra("firstScore", 0);
 
-        playagain = (Button) findViewById(R.id.playAgainButton);
-        playagain.setOnClickListener(new View.OnClickListener() {
+        btn_play_again = (Button) findViewById(R.id.playAgainButton);
+        btn_play_again.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntent = new Intent(getBaseContext(), StartActivity.class);
+                startActivity(startIntent);
+            }
+        });
+
+        btn_quit = (Button) findViewById(R.id.quitButton);
+        btn_quit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
+
     }
 }
 
