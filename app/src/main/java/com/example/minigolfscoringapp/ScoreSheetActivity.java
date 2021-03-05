@@ -196,6 +196,7 @@ public  class ScoreSheetActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), WinnerActivity.class);
+                intent.putExtra("firstScore", numStrokes);
                 startActivity(intent);
             }
         });
