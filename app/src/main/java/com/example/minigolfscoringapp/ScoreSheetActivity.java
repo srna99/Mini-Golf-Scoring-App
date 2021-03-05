@@ -1,6 +1,8 @@
 package com.example.minigolfscoringapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.view.View;
@@ -10,6 +12,8 @@ import android.view.inputmethod.EditorInfo;
 import android.os.Bundle;
 import android.view.KeyEvent;
 public  class ScoreSheetActivity extends AppCompatActivity {
+
+    Button finishButton;
 
     EditText p1Hole1, p1Hole2, p1Hole3, p1Hole4, p1Hole5;
     EditText p2Hole1, p2Hole2, p2Hole3, p2Hole4, p2Hole5;
@@ -180,6 +184,19 @@ public  class ScoreSheetActivity extends AppCompatActivity {
                     p2Hole5.clearFocus();
                 }
                 return false;
+            }
+        });
+
+        finishButton = (Button) findViewById(R.id.finishButton);
+
+
+        //Navigates to next screen
+        //TODO: pass scores to final screen through intent
+        finishButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), WinnerActivity.class);
+                startActivity(intent);
             }
         });
 
