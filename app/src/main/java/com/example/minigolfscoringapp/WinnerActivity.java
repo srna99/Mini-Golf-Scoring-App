@@ -15,14 +15,14 @@ public class WinnerActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_winner);
+
         Intent intent = getIntent();
         firstScore = intent.getIntExtra("firstScore", 0);
 
-        super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.activity_winner);
-        this.playagain = (Button) this.findViewById(R.id.winner);
-        this.playagain.setOnClickListener(new View.OnClickListener() {
+        playagain = (Button) findViewById(R.id.playAgainButton);
+        playagain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();

@@ -7,11 +7,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.view.View;
 import android.widget.Button;
-import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
 import android.os.Bundle;
 import android.view.KeyEvent;
-public  class ScoreSheetActivity extends AppCompatActivity {
+
+public class ScoreSheetActivity extends AppCompatActivity {
 
     Button finishButton;
 
@@ -44,6 +44,8 @@ public  class ScoreSheetActivity extends AppCompatActivity {
 
         p1Total = (TextView) findViewById(R.id.player1Total);
         p2Total = (TextView) findViewById(R.id.player2Total);
+
+        finishButton = (Button) findViewById(R.id.finishButton);
 
         p1Hole1.setOnEditorActionListener(new EditText.OnEditorActionListener() {
             @Override
@@ -187,16 +189,16 @@ public  class ScoreSheetActivity extends AppCompatActivity {
             }
         });
 
-        finishButton = (Button) findViewById(R.id.finishButton);
-
-
         //Navigates to next screen
         //TODO: pass scores to final screen through intent
         finishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), WinnerActivity.class);
-                intent.putExtra("firstScore", numStrokes);
+
+                int winnerScore = Math.min(p1FinalTotal, p2FinalTotal);
+
+                intent.putExtra("firstScore", winnerScore);
                 startActivity(intent);
             }
         });
