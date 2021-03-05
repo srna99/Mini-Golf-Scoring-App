@@ -10,6 +10,7 @@ import android.view.inputmethod.EditorInfo;
 import android.os.Bundle;
 import android.view.KeyEvent;
 public  class ScoreSheetActivity extends AppCompatActivity {
+
     EditText p1Hole1, p1Hole2, p1Hole3, p1Hole4, p1Hole5;
     EditText p2Hole1, p2Hole2, p2Hole3, p2Hole4, p2Hole5;
     TextView p1Total, p2Total;
@@ -21,8 +22,10 @@ public  class ScoreSheetActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score_sheet);
+
         p1Hole1 = (EditText) findViewById(R.id.p1h1);
         p1Hole2 = (EditText) findViewById(R.id.p1h2);
         p1Hole3 = (EditText) findViewById(R.id.p1h3);
@@ -47,7 +50,7 @@ public  class ScoreSheetActivity extends AppCompatActivity {
                     numStrokes = Integer.parseInt(boxEntry);
                     p1FinalTotal += numStrokes;
                     p1Total.setText(String.valueOf(p1FinalTotal));
-
+                    p1Hole1.clearFocus();
                 }
                 return false;
             }
@@ -61,7 +64,7 @@ public  class ScoreSheetActivity extends AppCompatActivity {
                     numStrokes = Integer.parseInt(boxEntry);
                     p1FinalTotal += numStrokes;
                     p1Total.setText(String.valueOf(p1FinalTotal));
-
+                    p1Hole2.clearFocus();
                 }
                 return false;
             }
@@ -75,7 +78,7 @@ public  class ScoreSheetActivity extends AppCompatActivity {
                     numStrokes = Integer.parseInt(boxEntry);
                     p1FinalTotal += numStrokes;
                     p1Total.setText(String.valueOf(p1FinalTotal));
-
+                    p1Hole3.clearFocus();
                 }
                 return false;
             }
@@ -89,7 +92,7 @@ public  class ScoreSheetActivity extends AppCompatActivity {
                     numStrokes = Integer.parseInt(boxEntry);
                     p1FinalTotal += numStrokes;
                     p1Total.setText(String.valueOf(p1FinalTotal));
-
+                    p1Hole4.clearFocus();
                 }
                 return false;
             }
@@ -103,7 +106,7 @@ public  class ScoreSheetActivity extends AppCompatActivity {
                     numStrokes = Integer.parseInt(boxEntry);
                     p1FinalTotal += numStrokes;
                     p1Total.setText(String.valueOf(p1FinalTotal));
-
+                    p1Hole5.clearFocus();
                 }
                 return false;
             }
@@ -117,7 +120,7 @@ public  class ScoreSheetActivity extends AppCompatActivity {
                     numStrokes = Integer.parseInt(boxEntry);
                     p2FinalTotal += numStrokes;
                     p2Total.setText(String.valueOf(p2FinalTotal));
-
+                    p2Hole1.clearFocus();
                 }
                 return false;
             }
@@ -132,7 +135,7 @@ public  class ScoreSheetActivity extends AppCompatActivity {
                     numStrokes = Integer.parseInt(boxEntry);
                     p2FinalTotal += numStrokes;
                     p2Total.setText(String.valueOf(p2FinalTotal));
-
+                    p2Hole2.clearFocus();
                 }
                 return false;
             }
@@ -146,7 +149,7 @@ public  class ScoreSheetActivity extends AppCompatActivity {
                     numStrokes = Integer.parseInt(boxEntry);
                     p2FinalTotal += numStrokes;
                     p2Total.setText(String.valueOf(p2FinalTotal));
-
+                    p2Hole3.clearFocus();
                 }
                 return false;
             }
@@ -160,7 +163,7 @@ public  class ScoreSheetActivity extends AppCompatActivity {
                     numStrokes = Integer.parseInt(boxEntry);
                     p2FinalTotal += numStrokes;
                     p2Total.setText(String.valueOf(p2FinalTotal));
-
+                    p2Hole4.clearFocus();
                 }
                 return false;
             }
@@ -174,10 +177,11 @@ public  class ScoreSheetActivity extends AppCompatActivity {
                     numStrokes = Integer.parseInt(boxEntry);
                     p2FinalTotal += numStrokes;
                     p2Total.setText(String.valueOf(p2FinalTotal));
-
+                    p2Hole5.clearFocus();
                 }
                 return false;
             }
         });
+
     }
 }
