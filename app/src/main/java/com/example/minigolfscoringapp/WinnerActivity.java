@@ -53,9 +53,9 @@ public class WinnerActivity extends AppCompatActivity {
         lbl_second_place = (TextView) findViewById(R.id.secondPlace);
         lbl_third_place = (TextView) findViewById(R.id.thirdPlace);
 
-        lbl_first_place.setText(topScores[0]);
-        lbl_second_place.setText(topScores[1]);
-        lbl_third_place.setText(topScores[2]);
+        lbl_first_place.setText("First Place: " + topScores[0]);
+        lbl_second_place.setText("Second Place: " + topScores[1]);
+        lbl_third_place.setText("Third Place: " + topScores[2]);
 
     }
 }
