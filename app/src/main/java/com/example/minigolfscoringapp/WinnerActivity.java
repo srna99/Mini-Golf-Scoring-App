@@ -5,13 +5,16 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class WinnerActivity extends AppCompatActivity {
 
     int firstScore;
     int secondScore;
     int thirdScore;
+    int[] topScores;
     Button btn_play_again, btn_quit;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +22,10 @@ public class WinnerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_winner);
 
         Intent intent = getIntent();
+        topScores = intent.getIntArrayExtra("topScores");
         firstScore = intent.getIntExtra("firstScore", 0);
+
+        updateTopScoreLabels(topScores);
 
         btn_play_again = (Button) findViewById(R.id.playAgainButton);
         btn_play_again.setOnClickListener(new View.OnClickListener() {
@@ -37,6 +43,19 @@ public class WinnerActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+    }
+
+    private void updateTopScoreLabels(int[] topScores) {
+        TextView lbl_first_place, lbl_second_place, lbl_third_place;
+
+        lbl_first_place = (TextView) findViewById(R.id.firstPlace);
+        lbl_second_place = (TextView) findViewById(R.id.secondPlace);
+        lbl_third_place = (TextView) findViewById(R.id.thirdPlace);
+
+        lbl_first_place.setText(topScores[0]);
+        lbl_second_place.setText(topScores[1]);
+        lbl_third_place.setText(topScores[2]);
 
     }
 }
