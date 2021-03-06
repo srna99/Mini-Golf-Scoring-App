@@ -8,86 +8,90 @@
     android:background="#B2D38C"
     tools:context=".WinnerActivity">
 
-    <Button
-        android:id="@+id/playAgainButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:layout_weight="0.5"
-        android:paddingHorizontal="25dp"
-        android:paddingVertical="10dp"
-        android:text="Play Again"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:backgroundTint="#6DB1E8"
-        app:layout_constraintBottom_toTopOf="@+id/quitButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+    <!--    <Button-->
+    <!--        android:id="@+id/quitButton"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginBottom="136dp"-->
+    <!--        android:text="Quit"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        tools:layout_editor_absoluteX="152dp" />-->
 
     <Button
         android:id="@+id/quitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="164dp"
+        android:layout_weight="0.5"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="15dp"
         android:text="Quit"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:backgroundTint="#6DB1E8"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="152dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
         android:layout_weight="0.25"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:text="Winner"
+        android:text="Game Over"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#424242"
-        android:textSize="36sp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp" />
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/thirdPlace"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="Third Place: "
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/playAgainButton"
-        app:layout_constraintTop_toBottomOf="@+id/secondPlace"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="97dp" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/thirdPlace"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="64dp"-->
+    <!--        android:text="3rd"-->
+    <!--        android:textSize="36sp"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/playAgainButton"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/secondPlace"-->
+    <!--        app:layout_constraintVertical_bias="0.0"-->
+    <!--        tools:layout_editor_absoluteX="170dp" />-->
 
     <TextView
         android:id="@+id/secondPlace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="Second Place: "
+        android:layout_marginTop="68dp"
+        android:text="2nd"
         android:textSize="36sp"
-        app:layout_constraintTop_toBottomOf="@+id/firstPlace"
-        tools:layout_editor_absoluteX="78dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstPlace" />
 
     <TextView
         android:id="@+id/firstPlace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="First Place: "
+        android:layout_marginTop="80dp"
+        android:text="1st"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

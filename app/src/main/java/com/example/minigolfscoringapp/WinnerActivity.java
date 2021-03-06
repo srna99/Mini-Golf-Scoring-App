@@ -13,6 +13,7 @@ public class WinnerActivity extends AppCompatActivity {
     int secondScore;
     int thirdScore;
     int[] topScores;
+    String[] playerNames;
     Button btn_play_again, btn_quit;
 
 
@@ -23,12 +24,13 @@ public class WinnerActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         topScores = intent.getIntArrayExtra("topScores");
-        firstScore = intent.getIntExtra("firstScore", 0);
+//        firstScore = intent.getIntExtra("firstScore", 0);
+        playerNames = intent.getStringArrayExtra("playerNames");
 
         updateTopScoreLabels(topScores);
 
-        btn_play_again = (Button) findViewById(R.id.playAgainButton);
-        btn_play_again.setOnClickListener(new View.OnClickListener() {
+        btn_quit = (Button) findViewById(R.id.quitButton);
+        btn_quit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent startIntent = new Intent(getBaseContext(), StartActivity.class);
@@ -36,13 +38,13 @@ public class WinnerActivity extends AppCompatActivity {
             }
         });
 
-        btn_quit = (Button) findViewById(R.id.quitButton);
-        btn_quit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+//        btn_quit = (Button) findViewById(R.id.quitButton);
+//        btn_quit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                finish();
+//            }
+//        });
 
     }
 
@@ -51,11 +53,11 @@ public class WinnerActivity extends AppCompatActivity {
 
         lbl_first_place = (TextView) findViewById(R.id.firstPlace);
         lbl_second_place = (TextView) findViewById(R.id.secondPlace);
-        lbl_third_place = (TextView) findViewById(R.id.thirdPlace);
+//        lbl_third_place = (TextView) findViewById(R.id.thirdPlace);
 
-        lbl_first_place.setText("First Place: " + topScores[0]);
-        lbl_second_place.setText("Second Place: " + topScores[1]);
-        lbl_third_place.setText("Third Place: " + topScores[2]);
+        lbl_first_place.setText("1st:\t" + playerNames[0] + " - " + topScores[0]);
+        lbl_second_place.setText("2nd:\t" + playerNames[1] + " - " + topScores[1]);
+//        lbl_third_place.setText("Third Place: " + topScores[2]);
 
     }
 }

@@ -202,9 +202,20 @@ public class ScoreSheetActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), WinnerActivity.class);
 
-                int winnerScore = Math.min(p1FinalTotal, p2FinalTotal);
+//                int winnerScore = Math.min(p1FinalTotal, p2FinalTotal);
+//                intent.putExtra("firstScore", winnerScore);
 
-                intent.putExtra("firstScore", winnerScore);
+                String[] playerNames = new String[2];
+
+                if (p1FinalTotal <= p2FinalTotal){
+                    playerNames[0] = "Player 1";
+                    playerNames[1] = "Player 2";
+                } else {
+                    playerNames[0] = "Player 2";
+                    playerNames[1] = "Player 1";
+                }
+
+                intent.putExtra("playerNames", playerNames);
                 intent.putExtra("topScores", getFinalTotals());
                 startActivity(intent);
             }
@@ -217,7 +228,7 @@ public class ScoreSheetActivity extends AppCompatActivity {
         TextView finalScoresTv;
 
         TableRow finalScores = (TableRow) ((TableLayout) findViewById(R.id.totalScoresTable)).getChildAt(0);
-        int[] finalTotals = new int[finalScores.getChildCount()]; //or int numPlayers
+        int[] finalTotals = new int[finalScores.getChildCount()-1]; //or int numPlayers
 
         for (int i=1; i<finalScores.getChildCount(); i++) {
             finalScoresTv = (TextView) finalScores.getChildAt(i);
@@ -225,13 +236,13 @@ public class ScoreSheetActivity extends AppCompatActivity {
         }
 
         Arrays.sort(finalTotals);
-        int[] topScores = new int[3];
+//        int[] topScores = new int[3];
+//
+//        for (int i=0; i<3; i++) {
+//            topScores[i] = finalTotals[i];
+//        }
 
-        for (int i=0; i<3; i++) {
-            topScores[i] = finalTotals[i];
-        }
-
-        return topScores;
+        return finalTotals;
     }
 
 }
