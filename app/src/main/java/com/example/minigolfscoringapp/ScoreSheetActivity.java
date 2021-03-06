@@ -3,13 +3,20 @@ package com.example.minigolfscoringapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.speech.tts.TextToSpeech;
 import android.widget.EditText;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.view.View;
 import android.widget.Button;
 import android.view.inputmethod.EditorInfo;
 import android.os.Bundle;
 import android.view.KeyEvent;
+
+import org.w3c.dom.Text;
+
+import java.util.Arrays;
 
 public class ScoreSheetActivity extends AppCompatActivity {
 
@@ -190,7 +197,6 @@ public class ScoreSheetActivity extends AppCompatActivity {
         });
 
         //Navigates to next screen
-        //TODO: pass scores to final screen through intent
         finishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -199,9 +205,32 @@ public class ScoreSheetActivity extends AppCompatActivity {
                 int winnerScore = Math.min(p1FinalTotal, p2FinalTotal);
 
                 intent.putExtra("firstScore", winnerScore);
+                intent.putExtra("topScores", getFinalTotals());
                 startActivity(intent);
             }
         });
 
+    }
+
+    // iterate over table to grab scores, return top three
+    private int[] getFinalTotals() {
+        TextView finalScoresTv;
+
+        TableRow finalScores = (TableRow) ((TableLayout) findViewById(R.id.totalScoresTable)).getChildAt(0);
+        int[] finalTotals = new int[finalScores.getChildCount()]; //or int numPlayers
+
+        for (int i=1; i<finalScores.getChildCount(); i++) {
+            finalScoresTv = (TextView) finalScores.getChildAt(i);
+            finalTotals[i-1] = Integer.parseInt(finalScoresTv.getText().toString());
+        }
+
+        Arrays.sort(finalTotals);
+        int[] topScores = new int[3];
+
+        for (int i=0; i<3; i++) {
+            topScores[i] = finalTotals[i];
+        }
+
+        return topScores;
     }
 }
