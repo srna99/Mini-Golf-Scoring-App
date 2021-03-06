@@ -8,42 +8,6 @@
     android:background="#B2D38C"
     tools:context=".WinnerActivity">
 
-    <TextView
-        android:id="@+id/thirdPlace"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Third Place: "
-        android:textSize="36sp"
-        tools:layout_editor_absoluteX="97dp"
-        tools:layout_editor_absoluteY="277dp" />
-
-    <TextView
-        android:id="@+id/secondPlace"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Second Place: "
-        android:textSize="36sp"
-        tools:layout_editor_absoluteX="78dp"
-        tools:layout_editor_absoluteY="194dp" />
-
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.25"
-        android:fontFamily="sans-serif-medium"
-        android:gravity="center"
-        android:text="Winner"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#424242"
-        android:textSize="36sp"
-        tools:ignore="MissingConstraints" />
-
     <Button
         android:id="@+id/playAgainButton"
         android:layout_width="wrap_content"
@@ -73,12 +37,57 @@
         tools:layout_editor_absoluteX="152dp" />
 
     <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.25"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="Winner"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#424242"
+        android:textSize="36sp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/thirdPlace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="Third Place: "
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/playAgainButton"
+        app:layout_constraintTop_toBottomOf="@+id/secondPlace"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="97dp" />
+
+    <TextView
+        android:id="@+id/secondPlace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="Second Place: "
+        android:textSize="36sp"
+        app:layout_constraintTop_toBottomOf="@+id/firstPlace"
+        tools:layout_editor_absoluteX="78dp" />
+
+    <TextView
         android:id="@+id/firstPlace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
         android:text="First Place: "
         android:textSize="36sp"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="114dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
