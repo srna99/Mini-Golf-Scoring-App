@@ -8,91 +8,85 @@
     android:background="#B2D38C"
     tools:context=".WinnerActivity">
 
-    <Button
-        android:id="@+id/playAgainButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:layout_weight="0.5"
-        android:paddingHorizontal="25dp"
-        android:paddingVertical="10dp"
-        android:text="Play Again"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:fontFamily="sans-serif-black"
-        app:backgroundTint="#6DB1E8"
-        app:layout_constraintBottom_toTopOf="@+id/quitButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/quitButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:text="Quit"
-        android:fontFamily="sans-serif-black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="152dp" />
-
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="57dp"
         android:layout_weight="0.25"
+        android:fontFamily="sans-serif-smallcaps"
         android:gravity="center"
         android:text="Winner"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#424242"
         android:textSize="36sp"
-        android:fontFamily="sans-serif-smallcaps"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/thirdPlace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="72dp"
+        android:fontFamily="sans-serif-black"
         android:text="Third Place: "
         android:textSize="36sp"
-        android:fontFamily="sans-serif-black"
-        app:layout_constraintBottom_toTopOf="@+id/playAgainButton"
-        app:layout_constraintTop_toBottomOf="@+id/secondPlace"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="97dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secondPlace" />
 
     <TextView
         android:id="@+id/secondPlace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="274dp"
+        android:fontFamily="sans-serif-black"
         android:text="Second Place: "
         android:textSize="36sp"
-        android:fontFamily="sans-serif-black"
-        app:layout_constraintTop_toBottomOf="@+id/firstPlace"
-        tools:layout_editor_absoluteX="78dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/firstPlace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginBottom="62dp"
+        android:fontFamily="sans-serif-black"
         android:text="First Place: "
         android:textSize="36sp"
-        android:fontFamily="sans-serif-black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintBottom_toTopOf="@+id/secondPlace"
+        app:layout_constraintEnd_toEndOf="@+id/secondPlace" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/quitButton"
+        android:layout_width="142dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
+        android:fontFamily="sans-serif-medium"
+        android:paddingHorizontal="40dp"
+        android:paddingVertical="20dp"
+        android:text="Quit"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="28sp"
+        app:backgroundTint="#6DB1E8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
