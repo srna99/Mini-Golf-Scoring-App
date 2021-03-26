@@ -10,83 +10,226 @@
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="0dp"
+        android:layout_width="393dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="44dp"
         android:layout_weight="0.25"
-        android:fontFamily="sans-serif-smallcaps"
+        android:fontFamily="@font/boogaloo"
         android:gravity="center"
-        android:text="Winner"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:text="Game Over!"
         android:textColor="#424242"
-        android:textSize="36sp"
+        android:textSize="58sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/thirdPlace"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Third Place: "
-        android:textSize="36sp"
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="393dp"
+        android:layout_height="429dp"
+        android:gravity="center"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/secondPlace" />
+        app:layout_constraintTop_toBottomOf="@+id/textView11">
 
-    <TextView
-        android:id="@+id/secondPlace"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="274dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Second Place: "
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TableRow
+            android:id="@+id/first"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="30dp"
+            android:gravity="center">
 
-    <TextView
-        android:id="@+id/firstPlace"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="23dp"
-        android:layout_marginRight="23dp"
-        android:layout_marginBottom="62dp"
-        android:fontFamily="sans-serif-black"
-        android:text="First Place: "
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/secondPlace"
-        app:layout_constraintEnd_toEndOf="@+id/secondPlace" />
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/fresca"
+                android:gravity="center"
+                android:text="1st"
+                android:textColor="#FDF4A3"
+                android:textSize="45sp"
+                android:textStyle="bold" />
 
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/firstPlaceName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:fontFamily="@font/fresca"
+                android:gravity="center"
+                android:text="Player Name"
+                android:textColor="#505050"
+                android:textSize="45sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/firstPlaceScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/fresca"
+                android:gravity="center"
+                android:text="10"
+                android:textColor="#F6FAD0"
+                android:textSize="45sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/second"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="30dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/fresca"
+                android:gravity="center"
+                android:text="2nd"
+                android:textColor="#FDF4A3"
+                android:textSize="34sp" />
+
+            <TextView
+                android:id="@+id/secondPlaceName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:fontFamily="@font/fresca"
+                android:gravity="center"
+                android:text="Player Name"
+                android:textColor="#505050"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/secondPlaceScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/fresca"
+                android:gravity="center"
+                android:text="10"
+                android:textColor="#F6FAD0"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/third"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="30dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/fresca"
+                android:gravity="center"
+                android:text="3rd"
+                android:textColor="#FDF4A3"
+                android:textSize="34sp" />
+
+            <TextView
+                android:id="@+id/thirdPlaceName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:fontFamily="@font/fresca"
+                android:gravity="center"
+                android:text="Player Name"
+                android:textColor="#505050"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/thirdPlaceScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/fresca"
+                android:gravity="center"
+                android:text="10"
+                android:textColor="#F6FAD0"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/fourth"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="30dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/fresca"
+                android:gravity="center"
+                android:text="4th"
+                android:textColor="#FDF4A3"
+                android:textSize="34sp" />
+
+            <TextView
+                android:id="@+id/fourthPlaceName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:fontFamily="@font/fresca"
+                android:gravity="center"
+                android:text="Player Name"
+                android:textColor="#505050"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/fourthPlaceScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/fresca"
+                android:gravity="center"
+                android:text="10"
+                android:textColor="#F6FAD0"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
 
     <Button
         android:id="@+id/quitButton"
         android:layout_width="142dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="120dp"
-        android:fontFamily="sans-serif-medium"
+        android:layout_marginStart="124dp"
+        android:layout_marginLeft="124dp"
+        android:layout_marginEnd="126dp"
+        android:layout_marginRight="126dp"
+        android:layout_marginBottom="96dp"
+        android:fontFamily="@font/boogaloo"
         android:paddingHorizontal="40dp"
         android:paddingVertical="20dp"
         android:text="Quit"
         android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="28sp"
+        android:textColor="#353535"
+        android:textSize="32sp"
         app:backgroundTint="#6DB1E8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
