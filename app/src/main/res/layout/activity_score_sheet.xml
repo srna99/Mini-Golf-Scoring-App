@@ -9,6 +9,7 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="20dp"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
     tools:context=".ScoreSheetActivity">
 
     <TextView
@@ -24,479 +25,804 @@
         android:textColor="#424242"
         android:textSize="38sp" />
 
-    <TableLayout
-        android:id="@+id/scoresTable"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_weight="5"
-        android:background="#FFFFFF"
-        android:stretchColumns="*">
+        android:layout_height="0dp"
+        android:layout_marginBottom="15dp"
+        android:layout_weight="9"
+        android:fadeScrollbars="false"
+        android:scrollbarStyle="outsideOverlay">
 
-        <TableRow
+        <TableLayout
+            android:id="@+id/scoresTable"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.75"
-            android:background="#F6FAD0"
-            android:gravity="center">
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.75"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:text="Hole"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/p1Name"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:text="Player 1"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/p2Name"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:text="Player 2"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/p3Name"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:text="Player 3"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:visibility="visible" />
-
-            <TextView
-                android:id="@+id/p4Name"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:text="Player 4"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/h1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.75"
-                android:background="#E4E4E4"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:text="1"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/p1h1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="3"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:imeOptions="actionDone"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="normal" />
-
-            <EditText
-                android:id="@+id/p2h1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="3"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:imeOptions="actionDone"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="normal" />
-
-            <EditText
-                android:id="@+id/p3h1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="3"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:imeOptions="actionDone"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="normal" />
-
-            <EditText
-                android:id="@+id/p4h1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="3"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:imeOptions="actionDone"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="normal" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/h2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.75"
-                android:background="#E4E4E4"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:text="2"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/p1h2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="3"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:imeOptions="actionDone"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="normal" />
-
-            <EditText
-                android:id="@+id/p2h2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="3"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:imeOptions="actionDone"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="normal" />
-
-            <EditText
-                android:id="@+id/p3h2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="3"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:imeOptions="actionDone"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="normal" />
-
-            <EditText
-                android:id="@+id/p4h2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="3"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:imeOptions="actionDone"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="normal" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/h3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.75"
-                android:background="#E4E4E4"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:text="3"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/p1h3"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="3"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:imeOptions="actionDone"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="normal" />
-
-            <EditText
-                android:id="@+id/p2h3"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="3"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:imeOptions="actionDone"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="normal" />
-
-            <EditText
-                android:id="@+id/p3h3"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="3"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:imeOptions="actionDone"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="normal" />
-
-            <EditText
-                android:id="@+id/p4h3"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="3"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:imeOptions="actionDone"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="normal" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/h4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.75"
-                android:background="#E4E4E4"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:text="4"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/p1h4"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="3"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:imeOptions="actionDone"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="normal" />
-
-            <EditText
-                android:id="@+id/p2h4"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="3"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:imeOptions="actionDone"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="normal" />
-
-            <EditText
-                android:id="@+id/p3h4"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="3"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:imeOptions="actionDone"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="normal" />
-
-            <EditText
-                android:id="@+id/p4h4"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="3"
-                android:fontFamily="@font/fresca"
-                android:gravity="center"
-                android:imeOptions="actionDone"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="normal" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/h5"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:background="#FFFFFF"
-            android:gravity="center">
+            android:stretchColumns="*">
 
-            <TextView
-                android:id="@+id/textView24"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.75"
-                android:background="#E4E4E4"
-                android:fontFamily="@font/fresca"
+            <TableRow
+                android:id="@+id/headers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F6FAD0"
                 android:gravity="center"
-                android:text="5"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="bold" />
+                android:minHeight="50dp">
 
-            <EditText
-                android:id="@+id/p1h5"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="3"
-                android:fontFamily="@font/fresca"
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.75"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:text="Hole"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/p1Name"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:text="Player 1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/p2Name"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:text="Player 2"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/p3Name"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:text="Player 3"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/p4Name"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:text="Player 4"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/h1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="70dp">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.75"
+                    android:background="#E4E4E4"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/p1h1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p2h1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p3h1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p4h1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/h2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="70dp">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.75"
+                    android:background="#E4E4E4"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/p1h2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p2h2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p3h2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p4h2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/h3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="70dp">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.75"
+                    android:background="#E4E4E4"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:text="3"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/p1h3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p2h3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p3h3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p4h3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/h4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="70dp">
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.75"
+                    android:background="#E4E4E4"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:text="4"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/p1h4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p2h4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p3h4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p4h4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/h5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
                 android:gravity="center"
-                android:imeOptions="actionDone"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="normal" />
+                android:minHeight="70dp">
 
-            <EditText
-                android:id="@+id/p2h5"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="3"
-                android:fontFamily="@font/fresca"
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.75"
+                    android:background="#E4E4E4"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:text="5"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/p1h5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p2h5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p3h5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p4h5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/h6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
                 android:gravity="center"
-                android:imeOptions="actionDone"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="normal" />
+                android:minHeight="70dp">
 
-            <EditText
-                android:id="@+id/p3h5"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="3"
-                android:fontFamily="@font/fresca"
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.75"
+                    android:background="#E4E4E4"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:text="6"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/p1h6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p2h6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p3h6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p4h6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/h7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
                 android:gravity="center"
-                android:imeOptions="actionDone"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="normal" />
+                android:minHeight="70dp">
 
-            <EditText
-                android:id="@+id/p4h5"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="3"
-                android:fontFamily="@font/fresca"
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.75"
+                    android:background="#E4E4E4"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:text="7"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/p1h7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p2h7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p3h7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p4h7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/h8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
                 android:gravity="center"
-                android:imeOptions="actionDone"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="22sp"
-                android:textStyle="normal" />
+                android:minHeight="70dp">
 
-        </TableRow>
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.75"
+                    android:background="#E4E4E4"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:text="8"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
 
-    </TableLayout>
+                <EditText
+                    android:id="@+id/p1h8"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p2h8"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p3h8"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p4h8"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/h9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:minHeight="70dp">
+
+                <TextView
+                    android:id="@+id/textView28"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.75"
+                    android:background="#E4E4E4"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:text="9"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/p1h9"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p2h9"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p3h9"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/p4h9"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:fontFamily="@font/fresca"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textSize="22sp"
+                    android:textStyle="normal" />
+
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
 
     <TableLayout
         android:id="@+id/totalScoresTable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:layout_weight="1"
+        android:layout_weight="0.75"
         android:background="#FFFFFF"
         android:stretchColumns="*">
 
