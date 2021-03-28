@@ -3,7 +3,6 @@ package com.example.minigolfscoringapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.speech.tts.TextToSpeech;
 import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -13,8 +12,6 @@ import android.widget.Button;
 import android.view.inputmethod.EditorInfo;
 import android.os.Bundle;
 import android.view.KeyEvent;
-
-import org.w3c.dom.Text;
 
 import java.util.Arrays;
 
@@ -49,8 +46,8 @@ public class ScoreSheetActivity extends AppCompatActivity {
         p2Hole4 = (EditText) findViewById(R.id.p2h4);
         p2Hole5 = (EditText) findViewById(R.id.p2h5);
 
-        p1Total = (TextView) findViewById(R.id.player1Total);
-        p2Total = (TextView) findViewById(R.id.player2Total);
+        p1Total = (TextView) findViewById(R.id.p1Total);
+        p2Total = (TextView) findViewById(R.id.p2Total);
 
         finishButton = (Button) findViewById(R.id.finishButton);
 
@@ -202,8 +199,8 @@ public class ScoreSheetActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), WinnerActivity.class);
 
-//                int winnerScore = Math.min(p1FinalTotal, p2FinalTotal);
-//                intent.putExtra("firstScore", winnerScore);
+                int winnerScore = Math.min(p1FinalTotal, p2FinalTotal);
+                intent.putExtra("firstScore", winnerScore);
 
                 String[] playerNames = new String[2];
 

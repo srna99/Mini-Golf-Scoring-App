@@ -8,91 +8,222 @@
     android:background="#B2D38C"
     tools:context=".WinnerActivity">
 
-    <Button
-        android:id="@+id/playAgainButton"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="393dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:layout_weight="0.5"
-        android:paddingHorizontal="25dp"
-        android:paddingVertical="10dp"
-        android:text="Play Again"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:fontFamily="sans-serif-black"
-        app:backgroundTint="#6DB1E8"
-        app:layout_constraintBottom_toTopOf="@+id/quitButton"
+        android:layout_marginTop="44dp"
+        android:layout_weight="0.25"
+        android:fontFamily="@font/boogaloo"
+        android:gravity="center"
+        android:text="Game Over!"
+        android:textColor="#424242"
+        android:textSize="58sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="393dp"
+        android:layout_height="429dp"
+        android:gravity="center"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11">
+
+        <TableRow
+            android:id="@+id/first"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="30dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/fresca"
+                android:gravity="center"
+                android:text="1st"
+                android:textColor="#FDF4A3"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/firstPlaceName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:fontFamily="@font/fresca"
+                android:gravity="center"
+                android:text="Player Name"
+                android:textColor="#505050"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/firstPlaceScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/fresca"
+                android:gravity="center"
+                android:text="10"
+                android:textColor="#F6FAD0"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/second"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="30dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/fresca"
+                android:gravity="center"
+                android:text="2nd"
+                android:textColor="#FDF4A3"
+                android:textSize="35sp" />
+
+            <TextView
+                android:id="@+id/secondPlaceName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:fontFamily="@font/fresca"
+                android:gravity="center"
+                android:text="Player Name"
+                android:textColor="#505050"
+                android:textSize="35sp"/>
+
+            <TextView
+                android:id="@+id/secondPlaceScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/fresca"
+                android:gravity="center"
+                android:text="10"
+                android:textColor="#F6FAD0"
+                android:textSize="35sp"/>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/third"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="30dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/fresca"
+                android:gravity="center"
+                android:text="3rd"
+                android:textColor="#FDF4A3"
+                android:textSize="35sp" />
+
+            <TextView
+                android:id="@+id/thirdPlaceName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:fontFamily="@font/fresca"
+                android:gravity="center"
+                android:text="Player Name"
+                android:textColor="#505050"
+                android:textSize="35sp"/>
+
+            <TextView
+                android:id="@+id/thirdPlaceScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/fresca"
+                android:gravity="center"
+                android:text="10"
+                android:textColor="#F6FAD0"
+                android:textSize="35sp"/>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/fourth"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="30dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/fresca"
+                android:gravity="center"
+                android:text="4th"
+                android:textColor="#FDF4A3"
+                android:textSize="35sp" />
+
+            <TextView
+                android:id="@+id/fourthPlaceName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:fontFamily="@font/fresca"
+                android:gravity="center"
+                android:text="Player Name"
+                android:textColor="#505050"
+                android:textSize="35sp"/>
+
+            <TextView
+                android:id="@+id/fourthPlaceScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/fresca"
+                android:gravity="center"
+                android:text="10"
+                android:textColor="#F6FAD0"
+                android:textSize="35sp"/>
+        </TableRow>
+    </TableLayout>
 
     <Button
         android:id="@+id/quitButton"
-        android:layout_width="wrap_content"
+        android:layout_width="142dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginLeft="124dp"
+        android:layout_marginEnd="126dp"
+        android:layout_marginRight="126dp"
+        android:layout_marginBottom="96dp"
+        android:fontFamily="@font/boogaloo"
+        android:paddingHorizontal="40dp"
+        android:paddingVertical="20dp"
         android:text="Quit"
-        android:fontFamily="sans-serif-black"
+        android:textAllCaps="false"
+        android:textColor="#353535"
+        android:textSize="32sp"
+        app:backgroundTint="#6DB1E8"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="152dp" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.25"
-        android:gravity="center"
-        android:text="Winner"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#424242"
-        android:textSize="36sp"
-        android:fontFamily="sans-serif-smallcaps"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <TextView
-        android:id="@+id/thirdPlace"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="Third Place: "
-        android:textSize="36sp"
-        android:fontFamily="sans-serif-black"
-        app:layout_constraintBottom_toTopOf="@+id/playAgainButton"
-        app:layout_constraintTop_toBottomOf="@+id/secondPlace"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="97dp" />
-
-    <TextView
-        android:id="@+id/secondPlace"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="Second Place: "
-        android:textSize="36sp"
-        android:fontFamily="sans-serif-black"
-        app:layout_constraintTop_toBottomOf="@+id/firstPlace"
-        tools:layout_editor_absoluteX="78dp" />
-
-    <TextView
-        android:id="@+id/firstPlace"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="First Place: "
-        android:textSize="36sp"
-        android:fontFamily="sans-serif-black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
