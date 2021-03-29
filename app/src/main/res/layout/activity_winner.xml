@@ -26,8 +26,9 @@
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="393dp"
-        android:layout_height="429dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:paddingLeft="25dp"
         android:paddingRight="25dp"
@@ -107,7 +108,7 @@
                 android:gravity="center"
                 android:text="Player Name"
                 android:textColor="#505050"
-                android:textSize="35sp"/>
+                android:textSize="35sp" />
 
             <TextView
                 android:id="@+id/secondPlaceScore"
@@ -148,7 +149,7 @@
                 android:gravity="center"
                 android:text="Player Name"
                 android:textColor="#505050"
-                android:textSize="35sp"/>
+                android:textSize="35sp" />
 
             <TextView
                 android:id="@+id/thirdPlaceScore"
@@ -189,7 +190,7 @@
                 android:gravity="center"
                 android:text="Player Name"
                 android:textColor="#505050"
-                android:textSize="35sp"/>
+                android:textSize="35sp" />
 
             <TextView
                 android:id="@+id/fourthPlaceScore"
@@ -206,15 +207,15 @@
 
     <Button
         android:id="@+id/quitButton"
-        android:layout_width="142dp"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="124dp"
         android:layout_marginLeft="124dp"
         android:layout_marginEnd="126dp"
         android:layout_marginRight="126dp"
-        android:layout_marginBottom="140dp"
+        android:layout_marginBottom="56dp"
         android:fontFamily="@font/boogaloo"
-        android:paddingHorizontal="40dp"
+        android:paddingHorizontal="30dp"
         android:paddingVertical="20dp"
         android:text="Quit"
         android:textAllCaps="false"
@@ -223,29 +224,29 @@
         app:backgroundTint="#6DB1E8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/play_againButton"
-        android:layout_width="226dp"
-        android:layout_height="104dp"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="124dp"
         android:layout_marginLeft="124dp"
         android:layout_marginEnd="126dp"
         android:layout_marginRight="126dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="20dp"
         android:fontFamily="@font/boogaloo"
-        android:paddingHorizontal="40dp"
+        android:paddingHorizontal="30dp"
         android:paddingVertical="20dp"
         android:text="Play Again"
         android:textAllCaps="false"
         android:textColor="#353535"
         android:textSize="32sp"
         app:backgroundTint="#6DB1E8"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/quitButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
