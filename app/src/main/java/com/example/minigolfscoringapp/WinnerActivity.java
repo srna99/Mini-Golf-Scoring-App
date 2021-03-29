@@ -37,15 +37,6 @@ public class WinnerActivity extends AppCompatActivity {
                 startActivity(startIntent);
             }
         });
-
-        btn_quit = (Button) findViewById(R.id.quitButton);
-        btn_quit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
     }
 
     private void updateTopScoreLabels(int[] topScores) {

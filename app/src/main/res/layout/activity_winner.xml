@@ -51,7 +51,7 @@
                 android:fontFamily="@font/fresca"
                 android:gravity="center"
                 android:text="1st"
-                android:textColor="#FDF4A3"
+                android:textColor="#FFF48C"
                 android:textSize="40sp"
                 android:textStyle="bold" />
 
@@ -75,7 +75,7 @@
                 android:fontFamily="@font/fresca"
                 android:gravity="center"
                 android:text="10"
-                android:textColor="#F6FAD0"
+                android:textColor="#FEFFF2"
                 android:textSize="40sp"
                 android:textStyle="bold" />
         </TableRow>
@@ -95,7 +95,7 @@
                 android:fontFamily="@font/fresca"
                 android:gravity="center"
                 android:text="2nd"
-                android:textColor="#FDF4A3"
+                android:textColor="#FFF48C"
                 android:textSize="35sp" />
 
             <TextView
@@ -117,8 +117,8 @@
                 android:fontFamily="@font/fresca"
                 android:gravity="center"
                 android:text="10"
-                android:textColor="#F6FAD0"
-                android:textSize="35sp"/>
+                android:textColor="#FEFFF2"
+                android:textSize="35sp" />
         </TableRow>
 
         <TableRow
@@ -136,7 +136,7 @@
                 android:fontFamily="@font/fresca"
                 android:gravity="center"
                 android:text="3rd"
-                android:textColor="#FDF4A3"
+                android:textColor="#FFF48C"
                 android:textSize="35sp" />
 
             <TextView
@@ -158,8 +158,8 @@
                 android:fontFamily="@font/fresca"
                 android:gravity="center"
                 android:text="10"
-                android:textColor="#F6FAD0"
-                android:textSize="35sp"/>
+                android:textColor="#FEFFF2"
+                android:textSize="35sp" />
         </TableRow>
 
         <TableRow
@@ -177,7 +177,7 @@
                 android:fontFamily="@font/fresca"
                 android:gravity="center"
                 android:text="4th"
-                android:textColor="#FDF4A3"
+                android:textColor="#FFF48C"
                 android:textSize="35sp" />
 
             <TextView
@@ -199,8 +199,8 @@
                 android:fontFamily="@font/fresca"
                 android:gravity="center"
                 android:text="10"
-                android:textColor="#F6FAD0"
-                android:textSize="35sp"/>
+                android:textColor="#FEFFF2"
+                android:textSize="35sp" />
         </TableRow>
     </TableLayout>
 
