@@ -37,6 +37,12 @@ public class WinnerActivity extends AppCompatActivity {
                 startActivity(startIntent);
             }
         });
+
+        btn_play_again = findViewById(R.id.play_againButton);
+        btn_play_again.setOnClickListener(v -> {
+            Intent startIntent = new Intent(getBaseContext(), SetUpActivity.class);
+            startActivity(startIntent);
+        });
     }
 
     private void updateTopScoreLabels(int[] topScores) {
