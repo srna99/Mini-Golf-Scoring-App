@@ -35,6 +35,10 @@ public class ScoreSheetActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score_sheet);
 
+        Intent receivedIntent = new Intent();
+        numPlayers = receivedIntent.getIntExtra("numberOfPlayers", 2);
+        numHoles = receivedIntent.getIntExtra("numberOfHoles", 18);
+
         p1Hole1 = (EditText) findViewById(R.id.p1h1);
         p1Hole2 = (EditText) findViewById(R.id.p1h2);
         p1Hole3 = (EditText) findViewById(R.id.p1h3);

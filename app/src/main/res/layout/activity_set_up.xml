@@ -18,7 +18,7 @@
       android:textSize="40sp"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+      app:layout_constraintTop_toBottomOf="@+id/playersInput" />
 
   <Button
       android:id="@+id/backButton"
@@ -56,7 +56,7 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintHorizontal_bias="0.497"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/editTextNumber2"
+      app:layout_constraintTop_toBottomOf="@+id/holesInput"
       app:layout_constraintVertical_bias="1.0" />
 
   <TextView
@@ -73,7 +73,7 @@
       app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
   <EditText
-      android:id="@+id/editTextNumber"
+      android:id="@+id/playersInput"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="44dp"
@@ -84,7 +84,7 @@
       app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
   <EditText
-      android:id="@+id/editTextNumber2"
+      android:id="@+id/holesInput"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginTop="44dp"
