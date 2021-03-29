@@ -10,4 +10,17 @@ public class SetUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_up);
     }
-}
+
+    private void setupNumPlayersInput() {
+
+    }
+
+    private void setupNumHolesInput() {
+
+    }
+
+    private void setupContinueButton() {
+
+    }
+
+}//END class

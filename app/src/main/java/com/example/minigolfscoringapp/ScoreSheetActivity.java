@@ -21,10 +21,11 @@ public class ScoreSheetActivity extends AppCompatActivity {
 
     EditText p1Hole1, p1Hole2, p1Hole3, p1Hole4, p1Hole5;
     EditText p2Hole1, p2Hole2, p2Hole3, p2Hole4, p2Hole5;
+    TableLayout scoresTable;
     TextView p1Total, p2Total;
 
     String boxEntry;
-    int numStrokes;
+    int numStrokes, numPlayers, numHoles;
     int p1FinalTotal = 0;
     int p2FinalTotal = 0;
 
@@ -48,6 +49,9 @@ public class ScoreSheetActivity extends AppCompatActivity {
 
         p1Total = (TextView) findViewById(R.id.p1Total);
         p2Total = (TextView) findViewById(R.id.p2Total);
+
+        scoresTable = (TableLayout) findViewById(R.id.scoresTable);
+//        setupHoleEditors();
 
         finishButton = (Button) findViewById(R.id.finishButton);
 
@@ -241,5 +245,7 @@ public class ScoreSheetActivity extends AppCompatActivity {
 
         return finalTotals;
     }
+
+    //Once the scores table has been created, attach input listeners to each cell
 
 }
