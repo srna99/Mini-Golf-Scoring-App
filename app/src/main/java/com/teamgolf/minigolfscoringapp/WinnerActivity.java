@@ -1,4 +1,4 @@
-package com.example.minigolfscoringapp;
+package com.teamgolf.minigolfscoringapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
