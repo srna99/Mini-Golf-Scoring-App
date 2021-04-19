@@ -2,8 +2,11 @@ package com.teamgolf.minigolfscoringapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.view.LayoutInflater;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -17,12 +20,16 @@ import java.util.Arrays;
 
 public class ScoreSheetActivity extends AppCompatActivity {
 
+    LayoutInflater inflater;
+    RelativeLayout rowTemp;
     Button finishButton;
 
     EditText p1Hole1, p1Hole2, p1Hole3, p1Hole4, p1Hole5;
     EditText p2Hole1, p2Hole2, p2Hole3, p2Hole4, p2Hole5;
+    EditText scoreInp;
     TableLayout scoresTable;
-    TextView p1Total, p2Total;
+    TableRow playerNames, row, total;
+    TextView player, holeNum, totalScore, p1Total, p2Total;
 
     String boxEntry;
     int numStrokes, numPlayers, numHoles;
@@ -35,26 +42,54 @@ public class ScoreSheetActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score_sheet);
 
-        Intent receivedIntent = new Intent();
+        Intent receivedIntent = getIntent();
         numPlayers = receivedIntent.getIntExtra("numberOfPlayers", 2);
         numHoles = receivedIntent.getIntExtra("numberOfHoles", 18);
 
-        p1Hole1 = (EditText) findViewById(R.id.p1h1);
-        p1Hole2 = (EditText) findViewById(R.id.p1h2);
-        p1Hole3 = (EditText) findViewById(R.id.p1h3);
-        p1Hole4 = (EditText) findViewById(R.id.p1h4);
-        p1Hole5 = (EditText) findViewById(R.id.p1h5);
-
-        p2Hole1 = (EditText) findViewById(R.id.p2h1);
-        p2Hole2 = (EditText) findViewById(R.id.p2h2);
-        p2Hole3 = (EditText) findViewById(R.id.p2h3);
-        p2Hole4 = (EditText) findViewById(R.id.p2h4);
-        p2Hole5 = (EditText) findViewById(R.id.p2h5);
-
-        p1Total = (TextView) findViewById(R.id.p1Total);
-        p2Total = (TextView) findViewById(R.id.p2Total);
-
         scoresTable = (TableLayout) findViewById(R.id.scoresTable);
+        playerNames = (TableRow) findViewById(R.id.headers);
+
+        total = (TableRow) findViewById(R.id.totals);
+
+        for(int i = 4; i > numPlayers; i--) {
+            player = (TextView) playerNames.getChildAt(i);
+            player.setVisibility(View.GONE);
+
+            totalScore = (TextView) total.getChildAt(i);
+            totalScore.setVisibility(View.GONE);
+        }
+
+        for(int i = 1; i <= numHoles; i++){
+            inflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            rowTemp = (RelativeLayout) inflater.inflate(R.layout.scoresheet_row, null);
+            row = (TableRow) rowTemp.getChildAt(0);
+
+            holeNum = (TextView) row.getChildAt(0);
+            holeNum.setText(String.valueOf(i));
+
+            for(int j = 4; j > numPlayers; j--) {
+                scoreInp = (EditText) row.getChildAt(j);
+                scoreInp.setVisibility(View.GONE);
+            }
+
+            scoresTable.addView(rowTemp, i);
+        }
+
+//        p1Hole1 = (EditText) findViewById(R.id.p1h1);
+//        p1Hole2 = (EditText) findViewById(R.id.p1h2);
+//        p1Hole3 = (EditText) findViewById(R.id.p1h3);
+//        p1Hole4 = (EditText) findViewById(R.id.p1h4);
+//        p1Hole5 = (EditText) findViewById(R.id.p1h5);
+//
+//        p2Hole1 = (EditText) findViewById(R.id.p2h1);
+//        p2Hole2 = (EditText) findViewById(R.id.p2h2);
+//        p2Hole3 = (EditText) findViewById(R.id.p2h3);
+//        p2Hole4 = (EditText) findViewById(R.id.p2h4);
+//        p2Hole5 = (EditText) findViewById(R.id.p2h5);
+//
+//        p1Total = (TextView) findViewById(R.id.p1Total);
+//        p2Total = (TextView) findViewById(R.id.p2Total);
+
 //        setupHoleEditors();
 
         finishButton = (Button) findViewById(R.id.finishButton);
@@ -249,7 +284,5 @@ public class ScoreSheetActivity extends AppCompatActivity {
 
         return finalTotals;
     }
-
-    //Once the scores table has been created, attach input listeners to each cell
 
 }

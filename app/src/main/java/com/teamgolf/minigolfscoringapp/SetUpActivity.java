@@ -30,7 +30,7 @@ public class SetUpActivity extends AppCompatActivity {
                 Intent scoreSheetIntent = new Intent(getBaseContext(), ScoreSheetActivity.class);
 
                 numPlayers = Integer.parseInt(playersIn.getText().toString());
-                numHoles = Integer.parseInt(playersIn.getText().toString());
+                numHoles = Integer.parseInt(holesIn.getText().toString());
 
                 scoreSheetIntent.putExtra("numberOfPlayers", numPlayers);
                 scoreSheetIntent.putExtra("numberOfHoles", numHoles);
