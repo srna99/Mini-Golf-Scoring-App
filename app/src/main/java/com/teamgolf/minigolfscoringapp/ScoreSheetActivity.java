@@ -48,9 +48,12 @@ public class ScoreSheetActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score_sheet);
 
+        //Receive game parameters from previous screen
         Intent receivedIntent = getIntent();
         numPlayers = receivedIntent.getIntExtra("numberOfPlayers", 2);
         numHoles = receivedIntent.getIntExtra("numberOfHoles", 18);
+
+        //tableInit();
 
         scoresTable = (TableLayout) findViewById(R.id.scoresTable);
         playerNames = (TableRow) findViewById(R.id.headers);
@@ -138,6 +141,26 @@ public class ScoreSheetActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    // Dynamically create table layout with specified rows and columns
+    private void tableInit() {
+        //Accept parameters from previous screen
+
+
+
+        //Find table layout by id
+
+        //For loop -> rows/cols
+        for(int i=1; i < numPlayers; i++) {
+            //Initialize table columns
+        }
+
+        for(int i=1; i < numHoles; i++) {
+            //Initialize table rows
+        }
+
+        //Store data in 2-dimensional array
     }
 
     // iterate over table to grab scores, return top three
