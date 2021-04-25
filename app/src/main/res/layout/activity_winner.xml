@@ -20,20 +20,18 @@
         android:textColor="#424242"
         android:textSize="58sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="match_parent"
+        android:layout_width="400dp"
         android:layout_height="300dp"
         android:layout_marginTop="40dp"
         android:gravity="center"
         android:paddingLeft="25dp"
         android:paddingRight="25dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11">
 
@@ -209,10 +207,10 @@
         android:id="@+id/quitButton"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginLeft="124dp"
-        android:layout_marginEnd="126dp"
-        android:layout_marginRight="126dp"
+        android:layout_marginStart="106dp"
+        android:layout_marginLeft="106dp"
+        android:layout_marginEnd="107dp"
+        android:layout_marginRight="107dp"
         android:layout_marginBottom="56dp"
         android:fontFamily="@font/boogaloo"
         android:paddingHorizontal="30dp"
@@ -224,17 +222,17 @@
         app:backgroundTint="#6DB1E8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/play_againButton"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginLeft="124dp"
-        android:layout_marginEnd="126dp"
-        android:layout_marginRight="126dp"
+        android:layout_marginStart="106dp"
+        android:layout_marginLeft="106dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="107dp"
+        android:layout_marginRight="107dp"
         android:layout_marginBottom="20dp"
         android:fontFamily="@font/boogaloo"
         android:paddingHorizontal="30dp"
@@ -246,7 +244,8 @@
         app:backgroundTint="#6DB1E8"
         app:layout_constraintBottom_toTopOf="@+id/quitButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
+        app:layout_constraintVertical_bias="0.85" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
