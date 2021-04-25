@@ -6,9 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TableLayout;
@@ -18,7 +16,6 @@ import android.view.View;
 import android.widget.Button;
 import android.os.Bundle;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Dictionary;
 import java.util.Hashtable;
@@ -52,8 +49,6 @@ public class ScoreSheetActivity extends AppCompatActivity {
         Intent receivedIntent = getIntent();
         numPlayers = receivedIntent.getIntExtra("numberOfPlayers", 2);
         numHoles = receivedIntent.getIntExtra("numberOfHoles", 18);
-
-        //tableInit();
 
         scoresTable = (TableLayout) findViewById(R.id.scoresTable);
         playerNames = (TableRow) findViewById(R.id.headers);
@@ -140,27 +135,6 @@ public class ScoreSheetActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-    }
-
-    // Dynamically create table layout with specified rows and columns
-    private void tableInit() {
-        //Accept parameters from previous screen
-
-
-
-        //Find table layout by id
-
-        //For loop -> rows/cols
-        for(int i=1; i < numPlayers; i++) {
-            //Initialize table columns
-        }
-
-        for(int i=1; i < numHoles; i++) {
-            //Initialize table rows
-        }
-
-        //Store data in 2-dimensional array
     }
 
     // iterate over table to grab scores, return top three
