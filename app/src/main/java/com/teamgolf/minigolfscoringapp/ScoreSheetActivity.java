@@ -37,6 +37,7 @@ public class ScoreSheetActivity extends AppCompatActivity {
     int p1FinalTotal = 0;
     int p2FinalTotal = 0;
 
+    // For player names (key) and their current scores (value)
     Dictionary<String, Integer> playerTotals = new Hashtable<>();
 
     @Override
@@ -55,6 +56,7 @@ public class ScoreSheetActivity extends AppCompatActivity {
 
         total = (TableRow) findViewById(R.id.totals);
 
+        // Dynamically adds rows to table
         for(int i = 1; i <= numHoles; i++){
             inflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             rowTemp = (RelativeLayout) inflater.inflate(R.layout.scoresheet_row, null);
@@ -63,6 +65,7 @@ public class ScoreSheetActivity extends AppCompatActivity {
             holeNum = (TextView) row.getChildAt(0);
             holeNum.setText(String.valueOf(i));
 
+            // Hides unneeded player columns
             for(int j = 4; j > numPlayers; j--) {
                 scoreInp = (EditText) row.getChildAt(j);
                 scoreInp.setVisibility(View.GONE);
@@ -74,6 +77,7 @@ public class ScoreSheetActivity extends AppCompatActivity {
                 totalScore.setVisibility(View.GONE);
             }
 
+            // Add listener for score calculation
             for(int j = 1; j <= numPlayers; j++) {
                 player = (TextView) playerNames.getChildAt(j);
                 String name = player.getText().toString();
