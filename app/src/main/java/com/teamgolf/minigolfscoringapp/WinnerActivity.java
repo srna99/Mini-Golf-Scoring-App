@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.os.Bundle;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,9 +18,12 @@ public class WinnerActivity extends AppCompatActivity {
     int[] rankedPlayerScores;
     String[] rankedPlayerNames;
 
-    int playerNum;
+    int numPlayers;
 
     Button playAgainButton, quitButton;
+    TableLayout rankingTable;
+    TableRow row;
+    TextView playerName, playerScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +33,16 @@ public class WinnerActivity extends AppCompatActivity {
         Intent intent = getIntent();
         playerTotals = (Map<String, Integer>) intent.getSerializableExtra("playerTotals");
 
-        playerNum = playerTotals.size();
-        rankedPlayerNames = new String[playerNum];
-        rankedPlayerScores = new int[playerNum];
+        numPlayers = playerTotals.size();
+        rankedPlayerNames = new String[numPlayers];
+        rankedPlayerScores = new int[numPlayers];
+
+        rankingTable = (TableLayout) findViewById(R.id.rankingTable);
+
+        for(int i = 4; i > numPlayers; i--) {
+            row = (TableRow) rankingTable.getChildAt(i-1);
+            row.setVisibility(View.GONE);
+        }
 
         rankPlayersAndScores();
         updateRankingLabels();
@@ -56,9 +69,9 @@ public class WinnerActivity extends AppCompatActivity {
     }
 
     private void rankPlayersAndScores() {
-        for(int i = 0; i < playerNum; i++) {
+        for(int i = 0; i < numPlayers; i++) {
             String minPlayer = "";
-            int minScore = -1;
+            int minScore = Integer.MAX_VALUE;
 
             for(Map.Entry<String, Integer> item : playerTotals.entrySet()) {
                 if(item.getValue() <= minScore) {
@@ -75,21 +88,15 @@ public class WinnerActivity extends AppCompatActivity {
     }
 
     private void updateRankingLabels() {
+        for(int i = 0; i < numPlayers; i++) {
+            row = (TableRow) rankingTable.getChildAt(i);
+            playerName = (TextView) row.getChildAt(1);
+            playerScore = (TextView) row.getChildAt(2);
 
-//        lbl_first_place = (TextView) findViewById(R.id.firstPlaceName);
-//        lbl_second_place = (TextView) findViewById(R.id.secondPlaceName);
-////        lbl_third_place = (TextView) findViewById(R.id.thirdPlace);
-//
-//        firstPlaceScoreLabel = (TextView) findViewById(R.id.firstPlaceScore);
-//        secondPlaceScoreLabel = (TextView) findViewById(R.id.secondPlaceScore);
-//
-//        lbl_first_place.setText(playerNames[0]);
-//        lbl_second_place.setText(playerNames[1]);
-////        lbl_third_place.setText("Third Place: " + topScores[2]);
-//
-//        firstPlaceScoreLabel.setText(String.valueOf(topScores[0]));
-//        secondPlaceScoreLabel.setText(String.valueOf(topScores[1]));
+            playerName.setText(rankedPlayerNames[i]);
+            playerScore.setText(String.valueOf(rankedPlayerScores[i]));
 
+        }
     }
 }
 

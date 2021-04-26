@@ -211,7 +211,7 @@
         android:layout_marginLeft="106dp"
         android:layout_marginEnd="107dp"
         android:layout_marginRight="107dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginBottom="44dp"
         android:fontFamily="@font/boogaloo"
         android:paddingHorizontal="30dp"
         android:paddingVertical="20dp"
