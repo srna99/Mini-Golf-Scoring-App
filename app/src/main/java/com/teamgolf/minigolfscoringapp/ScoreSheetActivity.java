@@ -16,9 +16,10 @@ import android.view.View;
 import android.widget.Button;
 import android.os.Bundle;
 
+import java.io.Serializable;
 import java.util.Arrays;
-import java.util.Dictionary;
 import java.util.Hashtable;
+import java.util.Map;
 
 import static android.view.View.FIND_VIEWS_WITH_CONTENT_DESCRIPTION;
 
@@ -27,18 +28,15 @@ public class ScoreSheetActivity extends AppCompatActivity {
     LayoutInflater inflater;
     RelativeLayout rowTemp;
     Button finishButton;
-
     EditText scoreInp;
     TableLayout scoresTable;
     TableRow playerNames, row, total;
-    TextView player, holeNum, totalScore, p1Total, p2Total;
+    TextView player, holeNum, totalScore;
 
     int numPlayers, numHoles;
-    int p1FinalTotal = 0;
-    int p2FinalTotal = 0;
 
     // For player names (key) and their current scores (value)
-    Dictionary<String, Integer> playerTotals = new Hashtable<>();
+    Map<String, Integer> playerTotals = new Hashtable<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,42 +118,10 @@ public class ScoreSheetActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), WinnerActivity.class);
-
-                int winnerScore = Math.min(p1FinalTotal, p2FinalTotal);
-                intent.putExtra("firstScore", winnerScore);
-
-                String[] playerNames = new String[2];
-
-                if (p1FinalTotal <= p2FinalTotal){
-                    playerNames[0] = "Player 1";
-                    playerNames[1] = "Player 2";
-                } else {
-                    playerNames[0] = "Player 2";
-                    playerNames[1] = "Player 1";
-                }
-
-                intent.putExtra("playerNames", playerNames);
-                intent.putExtra("topScores", getFinalTotals());
+                intent.putExtra("playerTotals", (Serializable) playerTotals);
                 startActivity(intent);
             }
         });
-    }
-
-    // iterate over table to grab scores, return top three
-    private int[] getFinalTotals() {
-        TextView finalScoresTv;
-
-        TableRow finalScores = (TableRow) ((TableLayout) findViewById(R.id.totalScoresTable)).getChildAt(0);
-        int[] finalTotals = new int[finalScores.getChildCount()-1]; //or int numPlayers
-
-        for (int i=1; i<finalScores.getChildCount(); i++) {
-            finalScoresTv = (TextView) finalScores.getChildAt(i);
-            finalTotals[i-1] = Integer.parseInt(finalScoresTv.getText().toString());
-        }
-
-        Arrays.sort(finalTotals);
-
-        return finalTotals;
     }
 
 }

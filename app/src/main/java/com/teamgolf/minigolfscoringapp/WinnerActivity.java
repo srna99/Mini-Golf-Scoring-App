@@ -5,17 +5,19 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.os.Bundle;
-import android.widget.TextView;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class WinnerActivity extends AppCompatActivity {
 
-    int firstScore;
-    int secondScore;
-    int thirdScore;
-    int[] topScores;
-    String[] playerNames;
-    Button btn_play_again, btn_quit;
+    Map<String, Integer> playerTotals = new HashMap<>();
+    int[] rankedPlayerScores;
+    String[] rankedPlayerNames;
 
+    int playerNum;
+
+    Button playAgainButton, quitButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,14 +25,18 @@ public class WinnerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_winner);
 
         Intent intent = getIntent();
-        topScores = intent.getIntArrayExtra("topScores");
-//        firstScore = intent.getIntExtra("firstScore", 0);
-        playerNames = intent.getStringArrayExtra("playerNames");
+        playerTotals = (Map<String, Integer>) intent.getSerializableExtra("playerTotals");
 
-        updateTopScoreLabels(topScores);
+        playerNum = playerTotals.size();
+        rankedPlayerNames = new String[playerNum];
+        rankedPlayerScores = new int[playerNum];
 
-        btn_quit = (Button) findViewById(R.id.quitButton);
-        btn_quit.setOnClickListener(new View.OnClickListener() {
+        rankPlayersAndScores();
+        updateRankingLabels();
+
+        quitButton = (Button) findViewById(R.id.quitButton);
+
+        quitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent startIntent = new Intent(getBaseContext(), StartActivity.class);
@@ -38,29 +44,51 @@ public class WinnerActivity extends AppCompatActivity {
             }
         });
 
-        btn_play_again = findViewById(R.id.play_againButton);
-        btn_play_again.setOnClickListener(v -> {
-            Intent startIntent = new Intent(getBaseContext(), SetUpActivity.class);
-            startActivity(startIntent);
+        playAgainButton = findViewById(R.id.play_againButton);
+
+        playAgainButton.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+                Intent startIntent = new Intent(getBaseContext(), SetUpActivity.class);
+                startActivity(startIntent);
+           }
         });
     }
 
-    private void updateTopScoreLabels(int[] topScores) {
-        TextView lbl_first_place, lbl_second_place, lbl_third_place, firstPlaceScoreLabel, secondPlaceScoreLabel;
+    private void rankPlayersAndScores() {
+        for(int i = 0; i < playerNum; i++) {
+            String minPlayer = "";
+            int minScore = -1;
 
-        lbl_first_place = (TextView) findViewById(R.id.firstPlaceName);
-        lbl_second_place = (TextView) findViewById(R.id.secondPlaceName);
-//        lbl_third_place = (TextView) findViewById(R.id.thirdPlace);
+            for(Map.Entry<String, Integer> item : playerTotals.entrySet()) {
+                if(item.getValue() <= minScore) {
+                    minPlayer = item.getKey();
+                    minScore = item.getValue();
+                }
+            }
 
-        firstPlaceScoreLabel = (TextView) findViewById(R.id.firstPlaceScore);
-        secondPlaceScoreLabel = (TextView) findViewById(R.id.secondPlaceScore);
+            rankedPlayerNames[i] = minPlayer;
+            rankedPlayerScores[i] = minScore;
 
-        lbl_first_place.setText(playerNames[0]);
-        lbl_second_place.setText(playerNames[1]);
-//        lbl_third_place.setText("Third Place: " + topScores[2]);
+            playerTotals.remove(minPlayer);
+        }
+    }
 
-        firstPlaceScoreLabel.setText(String.valueOf(topScores[0]));
-        secondPlaceScoreLabel.setText(String.valueOf(topScores[1]));
+    private void updateRankingLabels() {
+
+//        lbl_first_place = (TextView) findViewById(R.id.firstPlaceName);
+//        lbl_second_place = (TextView) findViewById(R.id.secondPlaceName);
+////        lbl_third_place = (TextView) findViewById(R.id.thirdPlace);
+//
+//        firstPlaceScoreLabel = (TextView) findViewById(R.id.firstPlaceScore);
+//        secondPlaceScoreLabel = (TextView) findViewById(R.id.secondPlaceScore);
+//
+//        lbl_first_place.setText(playerNames[0]);
+//        lbl_second_place.setText(playerNames[1]);
+////        lbl_third_place.setText("Third Place: " + topScores[2]);
+//
+//        firstPlaceScoreLabel.setText(String.valueOf(topScores[0]));
+//        secondPlaceScoreLabel.setText(String.valueOf(topScores[1]));
 
     }
 }
