@@ -99,16 +99,9 @@ public class ScoreSheetActivity extends AppCompatActivity {
 
                     @Override
                     public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        if(!s.toString().isEmpty()){
-                            int score = Integer.parseInt(s.toString());
-                            if (score <1 || score > 5){
-                                scoreInp.setError("Please enter a number of strokes between 1 and 5");
-                            }
-                            playerTotals.put(name, playerTotals.get(name) - score);
-                            playerScore.setText(String.valueOf(playerTotals.get(name)));
-                        }
+                        
                     }
-                    
+
 
                     @Override
                     public void afterTextChanged(Editable s) {
@@ -134,7 +127,9 @@ public class ScoreSheetActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), WinnerActivity.class);
                 intent.putExtra("playerTotals", (Serializable) playerTotals);
-                startActivity(intent);
+                if (scoreInp.getError() == null) {
+                    startActivity(intent);
+                }
             }
         });
     }
