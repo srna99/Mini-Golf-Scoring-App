@@ -31,7 +31,7 @@ public class SetUpActivity extends AppCompatActivity {
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (TextUtils.isEmpty(playersIn.getText().toString())){
+                if (playersIn.getText() == ""){
                     playersIn.setError("Please enter a number of players between 1 and 4");
                 }
                 if (TextUtils.isEmpty(holesIn.getText().toString())) {
@@ -49,7 +49,7 @@ public class SetUpActivity extends AppCompatActivity {
                     holesIn.setError("Please enter a number of holes between 1 and 18");
                 }
 
-                
+
                 if (playersIn.getError() == null && holesIn.getError() == null) {
                     scoreSheetIntent.putExtra("numberOfPlayers", numPlayers);
                     scoreSheetIntent.putExtra("numberOfHoles", numHoles);
