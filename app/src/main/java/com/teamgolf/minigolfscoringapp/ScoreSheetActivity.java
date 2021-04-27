@@ -109,7 +109,7 @@ public class ScoreSheetActivity extends AppCompatActivity {
                 });
             }
 
-            scoresTable.addView(rowTemp, i);
+            scoresTable.addView(rowTemp, i-1);
         }
 
         finishButton = (Button) findViewById(R.id.finishButton);
