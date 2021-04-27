@@ -89,6 +89,9 @@ public class ScoreSheetActivity extends AppCompatActivity {
                     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                         if(!s.toString().isEmpty()){
                             int score = Integer.parseInt(s.toString());
+                            if (score <1 || score > 5){
+                                scoreInp.setError("Please enter a number of strokes between 1 and 5");
+                            }
                             playerTotals.put(name, playerTotals.get(name) - score);
                             playerScore.setText(String.valueOf(playerTotals.get(name)));
                         }
@@ -96,12 +99,24 @@ public class ScoreSheetActivity extends AppCompatActivity {
 
                     @Override
                     public void onTextChanged(CharSequence s, int start, int before, int count) {
+                        if(!s.toString().isEmpty()){
+                            int score = Integer.parseInt(s.toString());
+                            if (score <1 || score > 5){
+                                scoreInp.setError("Please enter a number of strokes between 1 and 5");
+                            }
+                            playerTotals.put(name, playerTotals.get(name) - score);
+                            playerScore.setText(String.valueOf(playerTotals.get(name)));
+                        }
                     }
+                    
 
                     @Override
                     public void afterTextChanged(Editable s) {
                         if(!s.toString().isEmpty()){
                             int score = Integer.parseInt(s.toString());
+                            if (score <1 || score > 5){
+                                scoreInp.setError("Please enter a number of strokes between 1 and 5");
+                            }
                             playerTotals.put(name, playerTotals.get(name) + score);
                             playerScore.setText(String.valueOf(playerTotals.get(name)));
                         }
