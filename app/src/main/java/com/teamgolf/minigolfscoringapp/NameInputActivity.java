@@ -6,8 +6,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.icu.number.UnlocalizedNumberFormatter;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -32,14 +34,14 @@ public class NameInputActivity extends AppCompatActivity {
         setContentView(R.layout.activity_player_name_input);
         parentLinearLayout = (LinearLayout) findViewById(R.id.name_parent_linear_layout);
 
-        addInputFields();
-
 //        nameInput = (EditText) findViewById(R.id.playerName1);
 //        namesInLayout = (TextInputLayout) findViewById(R.id.nameInputsLayout);
 
         Intent receivedIntent = getIntent();
         numPlayers = receivedIntent.getIntExtra("numberOfPlayers", 2);
         numHoles = receivedIntent.getIntExtra("numberOfHoles", 1);
+
+        addInputFields();
 
         continueButton = (Button) findViewById(R.id.name_input_continue);
         continueButton.setOnClickListener(new View.OnClickListener() {
@@ -57,15 +59,27 @@ public class NameInputActivity extends AppCompatActivity {
     //Dynamically create name input fields, with a default amount of 2
     protected void addInputFields() {
 
-        for(int i=2; i<=numPlayers; i++) {
-            //Create new name input with incrementing id
-            LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            LinearLayout tempLine = (LinearLayout) inflater.inflate(R.layout.name_input_field, null);
-            EditText nextField = (EditText) tempLine.getChildAt(0);
-            nextField.setHint("Player " + i);
-//            nextField.setId("player_" + i + "_field");
-            //Add subsequent fields before submit button
-            parentLinearLayout.addView(nextField, parentLinearLayout.getChildCount() - 1);
+        //Attempt using layout inflater
+//        for(int i=2; i<=numPlayers; i++) {
+//            //Create new name input with incrementing id
+//            LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//            LinearLayout tempLine = (LinearLayout) inflater.inflate(R.layout.name_input_field, null);
+//            EditText nextField = (EditText) tempLine.getChildAt(0);
+//            nextField.setHint("Player " + i);
+//
+////            nextField.setId("player_" + i + "_field");
+//            //Add subsequent fields before submit button
+//            parentLinearLayout.addView(nextField, parentLinearLayout.getChildCount() - 1);
+//        }
+        //Manually creating edittexts
+        for(int i=1; i<=numPlayers; i++) {
+            EditText newInputField = new EditText(this);
+            LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT);
+            newInputField.setLayoutParams(p);
+            newInputField.setHint("Player " + i);
+            parentLinearLayout.addView(newInputField, parentLinearLayout.getChildCount() - 1);
         }
+
     }
 }

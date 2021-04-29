@@ -25,7 +25,6 @@ public class SetUpActivity extends AppCompatActivity {
         playersIn = findViewById(R.id.playersInput);
         holesIn = findViewById(R.id.holesInput);
 
-
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,7 +35,6 @@ public class SetUpActivity extends AppCompatActivity {
                     holesIn.setError("Please enter a number of holes between 1 and 18");
                 }
 //                Intent scoreSheetIntent = new Intent(getBaseContext(), ScoreSheetActivity.class);
-                Intent nameInputIntent = new Intent(getBaseContext(), NameInputActivity.class);
 
                 numPlayers = Integer.parseInt(playersIn.getText().toString());
                 if( numPlayers <1 || numPlayers >4) {
@@ -54,6 +52,7 @@ public class SetUpActivity extends AppCompatActivity {
 //                    scoreSheetIntent.putExtra("numberOfHoles", numHoles);
 //                    startActivity(scoreSheetIntent);
 
+                    Intent nameInputIntent = new Intent(getBaseContext(), NameInputActivity.class);
                     nameInputIntent.putExtra("numberOfPlayers", numPlayers);
                     nameInputIntent.putExtra("numberOfHoles", numHoles);
                     startActivity(nameInputIntent);
