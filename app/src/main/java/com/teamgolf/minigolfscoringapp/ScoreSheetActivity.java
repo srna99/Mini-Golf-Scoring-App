@@ -34,6 +34,7 @@ public class ScoreSheetActivity extends AppCompatActivity {
     TextView player, holeNum, totalScore;
 
     int numPlayers, numHoles;
+    String[] playerNameStrings;
 
     // For player names (key) and their current scores (value)
     Map<String, Integer> playerTotals = new Hashtable<>();
@@ -48,6 +49,7 @@ public class ScoreSheetActivity extends AppCompatActivity {
         Intent receivedIntent = getIntent();
         numPlayers = receivedIntent.getIntExtra("numberOfPlayers", 2);
         numHoles = receivedIntent.getIntExtra("numberOfHoles", 18);
+        playerNameStrings = receivedIntent.getStringArrayExtra("namesOfPlayers");
 
         scoresTable = (TableLayout) findViewById(R.id.scoresTable);
         playerNames = (TableRow) findViewById(R.id.headers);
@@ -78,6 +80,7 @@ public class ScoreSheetActivity extends AppCompatActivity {
             // Add listener for score calculation
             for(int j = 1; j <= numPlayers; j++) {
                 player = (TextView) playerNames.getChildAt(j);
+                player.setText(playerNameStrings[j-1]);
                 String name = player.getText().toString();
                 playerTotals.put(name, 0);
 
