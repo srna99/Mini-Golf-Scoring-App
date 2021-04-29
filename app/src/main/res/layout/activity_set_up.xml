@@ -42,7 +42,7 @@
       app:layout_constraintTop_toTopOf="parent" />
 
   <Button
-      android:id="@+id/continueButton"
+      android:id="@+id/name_input_continue"
       android:layout_width="180dp"
       android:layout_height="wrap_content"
       android:layout_marginStart="106dp"

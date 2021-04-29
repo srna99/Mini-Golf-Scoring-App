@@ -4,12 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.InputFilter;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class SetUpActivity extends AppCompatActivity {
     Button continueButton;
@@ -22,7 +20,7 @@ public class SetUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_set_up);
 
 //        setupContinueButton();
-        continueButton = findViewById(R.id.continueButton);
+        continueButton = findViewById(R.id.name_input_continue);
 
         playersIn = findViewById(R.id.playersInput);
         holesIn = findViewById(R.id.holesInput);
@@ -37,7 +35,8 @@ public class SetUpActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(holesIn.getText().toString())) {
                     holesIn.setError("Please enter a number of holes between 1 and 18");
                 }
-                Intent scoreSheetIntent = new Intent(getBaseContext(), ScoreSheetActivity.class);
+//                Intent scoreSheetIntent = new Intent(getBaseContext(), ScoreSheetActivity.class);
+                Intent nameInputIntent = new Intent(getBaseContext(), NameInputActivity.class);
 
                 numPlayers = Integer.parseInt(playersIn.getText().toString());
                 if( numPlayers <1 || numPlayers >4) {
@@ -51,9 +50,13 @@ public class SetUpActivity extends AppCompatActivity {
 
 
                 if (playersIn.getError() == null && holesIn.getError() == null) {
-                    scoreSheetIntent.putExtra("numberOfPlayers", numPlayers);
-                    scoreSheetIntent.putExtra("numberOfHoles", numHoles);
-                    startActivity(scoreSheetIntent);
+//                    scoreSheetIntent.putExtra("numberOfPlayers", numPlayers);
+//                    scoreSheetIntent.putExtra("numberOfHoles", numHoles);
+//                    startActivity(scoreSheetIntent);
+
+                    nameInputIntent.putExtra("numberOfPlayers", numPlayers);
+                    nameInputIntent.putExtra("numberOfHoles", numHoles);
+                    startActivity(nameInputIntent);
                 }
             }
         });

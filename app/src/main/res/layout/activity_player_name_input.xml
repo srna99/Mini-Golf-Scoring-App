@@ -31,7 +31,7 @@
         android:hint="Player 1" />
 
     <Button
-        android:id="@+id/continueButton"
+        android:id="@+id/name_input_continue"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
