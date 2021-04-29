@@ -25,7 +25,8 @@ public class NameInputActivity extends AppCompatActivity {
     EditText nameInput;
     protected TextInputLayout namesInLayout;
     protected LinearLayout parentLinearLayout;
-
+    protected String[] playerNames;
+    protected String currentName;
     int numPlayers, numHoles;
 
     @Override
@@ -34,12 +35,11 @@ public class NameInputActivity extends AppCompatActivity {
         setContentView(R.layout.activity_player_name_input);
         parentLinearLayout = (LinearLayout) findViewById(R.id.name_parent_linear_layout);
 
-//        nameInput = (EditText) findViewById(R.id.playerName1);
-//        namesInLayout = (TextInputLayout) findViewById(R.id.nameInputsLayout);
-
         Intent receivedIntent = getIntent();
         numPlayers = receivedIntent.getIntExtra("numberOfPlayers", 2);
         numHoles = receivedIntent.getIntExtra("numberOfHoles", 1);
+
+        playerNames = new String[numPlayers];
 
         addInputFields();
 
@@ -47,10 +47,17 @@ public class NameInputActivity extends AppCompatActivity {
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Populate array with player names
+                for(int i=0;i<numPlayers;i++) {
+                    nameInput = (EditText) findViewById(i+1);
+                    //TODO: Error checking of name
+                    playerNames[i] = nameInput.getText().toString();
+                }
                 Intent scoreSheetIntent = new Intent(getBaseContext(), ScoreSheetActivity.class);
                 //Pass player names to next screen
                 scoreSheetIntent.putExtra("numberOfPlayers", numPlayers);
                 scoreSheetIntent.putExtra("numberOfHoles", numHoles);
+                scoreSheetIntent.putExtra("namesOfPlayers", playerNames);
                 startActivity(scoreSheetIntent);
             }
         });
@@ -58,19 +65,6 @@ public class NameInputActivity extends AppCompatActivity {
 
     //Dynamically create name input fields, with a default amount of 2
     protected void addInputFields() {
-
-        //Attempt using layout inflater
-//        for(int i=2; i<=numPlayers; i++) {
-//            //Create new name input with incrementing id
-//            LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//            LinearLayout tempLine = (LinearLayout) inflater.inflate(R.layout.name_input_field, null);
-//            EditText nextField = (EditText) tempLine.getChildAt(0);
-//            nextField.setHint("Player " + i);
-//
-////            nextField.setId("player_" + i + "_field");
-//            //Add subsequent fields before submit button
-//            parentLinearLayout.addView(nextField, parentLinearLayout.getChildCount() - 1);
-//        }
         //Manually creating edittexts
         for(int i=1; i<=numPlayers; i++) {
             EditText newInputField = new EditText(this);
@@ -78,8 +72,9 @@ public class NameInputActivity extends AppCompatActivity {
                     ViewGroup.LayoutParams.WRAP_CONTENT);
             newInputField.setLayoutParams(p);
             newInputField.setHint("Player " + i);
+            newInputField.setId(i);
+            //Add input fields before the continue button
             parentLinearLayout.addView(newInputField, parentLinearLayout.getChildCount() - 1);
         }
-
     }
 }
