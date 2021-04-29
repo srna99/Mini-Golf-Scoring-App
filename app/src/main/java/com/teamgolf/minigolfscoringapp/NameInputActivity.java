@@ -45,9 +45,11 @@ public class NameInputActivity extends AppCompatActivity {
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getBaseContext(), ScoreSheetActivity.class);
+                Intent scoreSheetIntent = new Intent(getBaseContext(), ScoreSheetActivity.class);
                 //Pass player names to next screen
-                //Open next screen
+                scoreSheetIntent.putExtra("numberOfPlayers", numPlayers);
+                scoreSheetIntent.putExtra("numberOfHoles", numHoles);
+                startActivity(scoreSheetIntent);
             }
         });
     }
