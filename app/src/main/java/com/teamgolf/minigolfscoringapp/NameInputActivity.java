@@ -1,22 +1,20 @@
 package com.teamgolf.minigolfscoringapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
-import android.content.Context;
 import android.content.Intent;
-import android.icu.number.UnlocalizedNumberFormatter;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import com.google.android.material.textfield.TextInputLayout;
-
-import org.w3c.dom.Text;
 
 public class NameInputActivity extends AppCompatActivity {
 
@@ -50,8 +48,12 @@ public class NameInputActivity extends AppCompatActivity {
                 //Populate array with player names
                 for(int i=0;i<numPlayers;i++) {
                     nameInput = (EditText) findViewById(i+1);
-                    //TODO: Error checking of name
-                    playerNames[i] = nameInput.getText().toString();
+
+                    if(nameInput.getText().toString().length() > 0) {
+                        playerNames[i] = nameInput.getText().toString();
+                    } else {
+                        playerNames[i] = nameInput.getHint().toString();
+                    }
                 }
                 Intent scoreSheetIntent = new Intent(getBaseContext(), ScoreSheetActivity.class);
                 //Pass player names to next screen
@@ -73,6 +75,12 @@ public class NameInputActivity extends AppCompatActivity {
             newInputField.setLayoutParams(p);
             newInputField.setHint("Player " + i);
             newInputField.setId(i);
+            newInputField.setMaxLines(1);
+            newInputField.setSingleLine();
+            newInputField.setImeOptions(EditorInfo.IME_ACTION_DONE);
+            newInputField.setTypeface(ResourcesCompat.getFont(this, R.font.fresca));
+            newInputField.setTextSize(25);
+
             //Add input fields before the continue button
             parentLinearLayout.addView(newInputField, parentLinearLayout.getChildCount() - 1);
         }
