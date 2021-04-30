@@ -84,7 +84,7 @@ public class ScoreSheetActivity extends AppCompatActivity {
                 String name = player.getText().toString();
                 playerTotals.put(name, 0);
 
-                scoreInp = (EditText) row.getChildAt(j);
+                EditText scoreInp = (EditText) row.getChildAt(j);
                 TextView playerScore = (TextView) total.getChildAt(j);
 
                 scoreInp.addTextChangedListener(new TextWatcher() {
@@ -92,8 +92,8 @@ public class ScoreSheetActivity extends AppCompatActivity {
                     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                         if(!s.toString().isEmpty()){
                             int score = Integer.parseInt(s.toString());
-                            if (score <1 || score > 5){
-                                scoreInp.setError("Please enter a number of strokes between 1 and 5");
+                            if (score <1 || score > 15){
+                                scoreInp.setError("Please enter a number of strokes between 1 and 15");
                             }
                             playerTotals.put(name, playerTotals.get(name) - score);
                             playerScore.setText(String.valueOf(playerTotals.get(name)));
@@ -105,13 +105,12 @@ public class ScoreSheetActivity extends AppCompatActivity {
                         
                     }
 
-
                     @Override
                     public void afterTextChanged(Editable s) {
                         if(!s.toString().isEmpty()){
                             int score = Integer.parseInt(s.toString());
-                            if (score <1 || score > 5){
-                                scoreInp.setError("Please enter a number of strokes between 1 and 5");
+                            if (score <1 || score > 15){
+                                scoreInp.setError("Please enter a number of strokes between 1 and 15");
                             }
                             playerTotals.put(name, playerTotals.get(name) + score);
                             playerScore.setText(String.valueOf(playerTotals.get(name)));
@@ -130,9 +129,10 @@ public class ScoreSheetActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), WinnerActivity.class);
                 intent.putExtra("playerTotals", (Serializable) playerTotals);
-                if (scoreInp.getError() == null) {
-                    startActivity(intent);
-                }
+//                if (scoreInp.getError() == null) {
+//                    startActivity(intent);
+//                }
+                startActivity(intent);
             }
         });
     }
